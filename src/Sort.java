@@ -1,25 +1,40 @@
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class Sort {
 
-    int[] arrayRandom = new int[10];
+    int[] arrayRandom = new int[10000];
+    int[] arrayRandomAffter = new int[10000];
     int random = 0;
     int temp = 0;
-//-------------------------------------------------------------------------------------
 
+//-------------------------------------------------------------------------------------
     public int randomValue(int random) {
-        double randomDouble = Math.random() * 100D;
+        double randomDouble = Math.random() * 100000D;
         random = (int) randomDouble;
         return random;
     }
 //-------------------------------------------------------------------------------------
 
     public void bubbleSort() {
+
+        long start = System.currentTimeMillis();
+
+        Sort sort = new Sort();
+
         System.out.print("โจทย์ : ");
-        for (int i = 0; i < arrayRandom.length; i++) {
-            arrayRandom[i] = randomValue(random);
-            System.out.print(arrayRandom[i] + " ");
+        if (arrayRandom[0] == 0) {
+            for (int i = 0; i < arrayRandom.length; i++) {
+                arrayRandom[i] = randomValue(random);
+                arrayRandomAffter[i] = arrayRandom[i];
+                System.out.print(arrayRandom[i] + " ");
+            }
+        } else {
+            for (int i = 0; i < arrayRandomAffter.length; i++) {
+                arrayRandom[i] = arrayRandomAffter[i];
+                System.out.print(arrayRandom[i] + " ");
+            }
         }
         System.out.println("");
 
@@ -32,18 +47,31 @@ public class Sort {
                 }
             }
         }
-
         for (int result : arrayRandom) {
             System.out.print(result + " ");
         }
+        long end = System.currentTimeMillis();
+        System.out.println("");
+        System.out.println("เวลาที่รัน: " + (end - start));
     }
 //--------------------------------------------------------------------------------------
 
     public void InsertionSort() {
+
+        long start = System.currentTimeMillis();
+
         System.out.print("โจทย์ : ");
-        for (int i = 0; i < arrayRandom.length; i++) {
-            arrayRandom[i] = randomValue(random);
-            System.out.print(arrayRandom[i] + " ");
+        if (arrayRandom[0] == 0) {
+            for (int i = 0; i < arrayRandom.length; i++) {
+                arrayRandom[i] = randomValue(random);
+                arrayRandomAffter[i] = arrayRandom[i];
+                System.out.print(arrayRandom[i] + " ");
+            }
+        } else {
+            for (int i = 0; i < arrayRandomAffter.length; i++) {
+                arrayRandom[i] = arrayRandomAffter[i];
+                System.out.print(arrayRandom[i] + " ");
+            }
         }
         System.out.println("");
 
@@ -54,20 +82,33 @@ public class Sort {
                 arrayRandom[j] = arrayRandom[j - 1];
                 j--;
             }
-            arrayRandom[j] = valueToSort;
+            arrayRandom[j] = valueToSort; // อย่าคิดไปรวกะใน loopwhile
         }
         for (int result : arrayRandom) {
             System.out.print(result + " ");
         }
-
+        long end = System.currentTimeMillis();
+        System.out.println("");
+        System.out.println("เวลาที่รัน: " + (end - start));
     }
 //--------------------------------------------------------------------------------------
 
     public void selectionSort() {
+
+        long start = System.currentTimeMillis();
+
         System.out.print("โจทย์ : ");
-        for (int i = 0; i < arrayRandom.length; i++) {
-            arrayRandom[i] = randomValue(random);
-            System.out.print(arrayRandom[i] + " ");
+        if (arrayRandom[0] == 0) {
+            for (int i = 0; i < arrayRandom.length; i++) {
+                arrayRandom[i] = randomValue(random);
+                arrayRandomAffter[i] = arrayRandom[i];
+                System.out.print(arrayRandom[i] + " ");
+            }
+        } else {
+            for (int i = 0; i < arrayRandomAffter.length; i++) {
+                arrayRandom[i] = arrayRandomAffter[i];
+                System.out.print(arrayRandom[i] + " ");
+            }
         }
         System.out.println("");
 
@@ -86,14 +127,29 @@ public class Sort {
         for (int result : arrayRandom) {
             System.out.print(result + " ");
         }
+        long end = System.currentTimeMillis();
+        System.out.println("");
+        System.out.println("เวลาที่รัน: " + (end - start));
+
     }
 //--------------------------------------------------------------------------------------
 
     public void mergeSort() {
+
+        long start = System.currentTimeMillis();
+
         System.out.print("โจทย์ : ");
-        for (int i = 0; i < arrayRandom.length; i++) {
-            arrayRandom[i] = randomValue(random);
-            System.out.print(arrayRandom[i] + " ");
+        if (arrayRandom[0] == 0) {
+            for (int i = 0; i < arrayRandom.length; i++) {
+                arrayRandom[i] = randomValue(random);
+                arrayRandomAffter[i] = arrayRandom[i];
+                System.out.print(arrayRandom[i] + " ");
+            }
+        } else {
+            for (int i = 0; i < arrayRandomAffter.length; i++) {
+                arrayRandom[i] = arrayRandomAffter[i];
+                System.out.print(arrayRandom[i] + " ");
+            }
         }
         System.out.println("");
 
@@ -102,6 +158,10 @@ public class Sort {
         for (int i = arrayRandom.length - 1; i >= 0; i--) {
             System.out.print(arrayRandom[i] + " ");
         }
+
+        long end = System.currentTimeMillis();
+        System.out.println("");
+        System.out.println("เวลาที่รัน: " + (end - start));
     }
 
     void mergeSortObject() {
@@ -143,10 +203,21 @@ public class Sort {
 
 //--------------------------------------------------------------------------------------
     public void quickSort() {
+
+        long start = System.currentTimeMillis();
+
         System.out.print("โจทย์ : ");
-        for (int i = 0; i < arrayRandom.length; i++) {
-            arrayRandom[i] = randomValue(random);
-            System.out.print(arrayRandom[i] + " ");
+        if (arrayRandom[0] == 0) {
+            for (int i = 0; i < arrayRandom.length; i++) {
+                arrayRandom[i] = randomValue(random);
+                arrayRandomAffter[i] = arrayRandom[i];
+                System.out.print(arrayRandom[i] + " ");
+            }
+        } else {
+            for (int i = 0; i < arrayRandomAffter.length; i++) {
+                arrayRandom[i] = arrayRandomAffter[i];
+                System.out.print(arrayRandom[i] + " ");
+            }
         }
         System.out.println("");
 
@@ -157,6 +228,10 @@ public class Sort {
         for (int i = arrayRandom.length - 1; i >= 0; i--) {
             System.out.print(arrayRandom[i] + " ");
         }
+
+        long end = System.currentTimeMillis();
+        System.out.println("");
+        System.out.println("เวลาที่รัน: " + (end - start));
 
     }
 
@@ -250,3 +325,15 @@ public class Sort {
     }
 
 }
+
+//ก่อนอื่น ต้องเข้าใจก่อนว่า โปรแกรมเดียวกัน รันด้วย input ตัวเดียวกัน ไม่จำเป็นต้องรันได้เวลาเท่ากันเสมอไปครับ
+//คร่าวๆ อาจจะได้ เช่น ประมาณ 5-6 วินาทีเหมือนกัน แต่ถ้าจะเอาละเอียดเป็น milli sec หรือ nano sec นี่ไม่มีทางเลยครับ
+//
+//ที่มันไม่เท่ากันเพราะว่า การทำงานหลายๆ อย่างของคอมพิวเตอร์มันกำหนดเวลาตายตัวแน่นนอนไม่ได้
+//เช่น ถ้าเครื่องมี harddisk การอ่านข้อมูลตำแหน่งเดียวกัน จากไฟล์เดียวกัน 2 ครั้ง ก็อาจใช้เวลาไม่เท่ากันแล้ว เพราะมันทำงานด้วยการหมุนของ disk และการเลื่อนของหัวอ่าน ซึ่งแล้วแต่การอ่านแต่ละครั้ง ว่าต้องหมุนหรือเลื่อนมากน้อยแค่ไหนถึงจะอ่านข้อมูลได้ครบ
+//นอกจากนั้น บนเครื่องไม่ได้มีโปรแกรมของคุณคนเดียวที่รันอยู่ มันยังมี OS มี service ที่รันเป็น background มี system interrupt ที่คอยแย่ง CPU จากโปรแกรมคุณมาทำงานอีก
+//
+//คุณคิดเอาง่ายๆ นะครับ ว่าคุณลอง boot Windows ขึ้นมาบนเครื่องเดียวกัน ลองทำ 2 ครั้งแล้วจับเวลา ก็ได้เวลาไม่เท่ากันครับ (เอาหน่วยวินาทีก็พอ)
+//
+//เรื่องนี้ มันเป็นไปไม่ได้ครับ
+//ถ้าจะหาว่าโปรแกรมใช้เวลาทำงานเท่าไหร่ ส่วนใหญ่ เค้าจะเก็บข้อมูลหลายๆ ครั้ง แล้วใช้ข้อมูลทางสถิติแทนครับ เช่น รันแล้วจับเวลา 30 ครั้ง แล้วหาค่าเฉลี่ย หรือหาค่า percentile ที่ 95 ก็ว่ากันไป
